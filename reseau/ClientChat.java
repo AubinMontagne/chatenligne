@@ -60,7 +60,7 @@ public class ClientChat
 	private void boucle() 
 	{
 		Scanner scanner = new Scanner(System.in); // La classe fait par l'iut et utilisable
-		System.out.println("Vous pouvez maintenant envoyer des messages (tapez 'quit' pour quitter) :");
+		System.out.println("Vous pouvez maintenant envoyer des messages (tapez 'quit' pour quitter) : \n /quiestenligne pour voir la liste des connectés");
 		while (true) 
 		{
 			String message = scanner.nextLine();
