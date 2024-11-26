@@ -81,6 +81,23 @@ public class ServeurChat {
 			}
 		}
 	}
+
+	static void voirConnectes (String pseudoEnvoyeur)
+	{
+		synchronized (clients)
+		{
+			
+			PrintWriter out = clients.get(pseudoEnvoyeur);
+			if (out !=null) 
+			{
+				clients.forEach((key, value) -> 
+				{
+					out.println(key);
+				});
+	
+			}
+		}
+	}
 	
 
 	private static class GerantDeClient implements Runnable 
@@ -141,6 +158,7 @@ public class ServeurChat {
 				{
 					System.out.println("Message reçu de " + pseudo + " : " + message);
 					
+					// à mettre en case quand j'aurai bcp de fonctionnalités , variables à
 					int espace = message.indexOf(' ');
 					if (message.startsWith("@"))
 					{
@@ -152,6 +170,13 @@ public class ServeurChat {
 							ServeurChat.messagePriv(messagePrive,pseudoDestinataire,envoyeur);	
 						}
 						
+					}
+					else if (message.startsWith("/quiestenligne"))
+					{
+						
+						System.out.println("test");
+						
+						ServeurChat.voirConnectes(this.getPseudo());
 					}
 					else 
 					{
