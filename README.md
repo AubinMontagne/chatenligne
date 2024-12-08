@@ -25,23 +25,16 @@ java deescaurd.Controleur
 
 Voici les fonctionnalités présentes : 
 
-1.
-/quiestenligne
-
+1. /quiestenligne
 Quand cette cette commande est utilisée, on voit la liste d'utilisateurs connectés sur le serveur.
 
-Avec
 
-2. 
-
-@<pseudo> <message>
+3. @pseudo message
 
 Vous pouvez envoyer un message privée à un utilisateur
  
 
-3.
-
-quit
+3.quit
 
 Cette commande vous fait simplement quitter le serveur
 
